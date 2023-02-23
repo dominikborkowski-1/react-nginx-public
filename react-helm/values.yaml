@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: dominikborkowski89/react-nginx
+  tag: latest
+
+reactapp:
+  port: 80
+  name: react-nginx
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+service:
+  name: reactapp-service
+  type: ClusterIP
+  port: 80
